@@ -5,14 +5,15 @@
         <input
           type="text"
           class="search-bar"
-          placeholder="City, Country ..."
+          placeholder="Search for a city ?"
           v-model="query"
           @keypress="fetchWeather"
         />
       </div>
 
       <div class="default" v-if="!weather.location">
-        <h2>Where is your current location?</h2>
+        <h2>WEATHARYA </h2>
+        <p class="">Where you can check your weather made easy !</p>
         <img src="./assets/default1-bg.png" class="rounded mx-auto d-block" alt="image" />
       </div>
 
@@ -50,6 +51,7 @@ export default {
           );
           const data = await res.json();
           this.setResults(data);
+          this.query = '';
         } catch (error) {
           console.error('Error fetching weather data', error);
         }
@@ -74,7 +76,15 @@ export default {
         'November',
         'December'
       ];
-      let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      let days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ];
 
       let day = days[d.getDay()];
       let date = d.getDate();
@@ -198,12 +208,22 @@ main {
 /* Styling for default view message */
 h2 {
   color: floralwhite;
+  font-style: inherit;
   padding: 20px;
   font-size: 32px;
-  font-weight: 500;
-  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(190, 180, 190, 0.5);
-  border-radius: 5px;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px,5px;
+}
+
+p {
+  color: floralwhite;
+  font-style: inherit;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px, 5px;
 }
 
 /* Styling for default view section */
@@ -240,7 +260,11 @@ h2 {
   font-size: 48px;
   font-style: italic;
   font-weight: 700;
-  text-shadow: 3px 6px rgba(0, 0, 0, 0.75);
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 60px;
+  margin: 30px 0px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 /* Styling for images */
