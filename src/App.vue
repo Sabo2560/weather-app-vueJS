@@ -147,20 +147,18 @@ export default {
 /* Styling for warm weather background */
 #app.warm {
   background-image: url('./assets/warm-bg.jpg');
-  /* Add other warm weather styles here */
+
 }
 
 /* Styling for cold weather background */
 #app.cold {
   background-image: url('./assets/cold-bg.jpg');
-  /* Add your cold weather background styles here */
 }
 
 /* Styling for the main content area */
 main {
   min-height: 100vh;
   padding: 25px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
 }
 
 /* Styling for the search box */
