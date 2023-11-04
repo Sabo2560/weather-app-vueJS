@@ -63,35 +63,26 @@ export default {
     dateBuilder() {
       let d = new Date();
       let months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
+        '06',
+        '07',
+        '08',
+        '09',
+        '10',
+        '11',
+        '12'
       ];
-      let days = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday'
-    ];
+    
 
-      let day = days[d.getDay()];
       let date = d.getDate();
       let month = months[d.getMonth()];
       let year = d.getFullYear();
 
-      return `${day} ${date} ${month} ${year}`;
+      return `${date} / ${month} / ${year}`;
     }
   },
   computed: {
@@ -134,7 +125,7 @@ export default {
   background-position: bottom;
   background-size: cover;
   transition: 0.4s;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Georgia, 'Times New Roman';
   text-align: center;
   color: #2c3e50;
 }
@@ -195,14 +186,26 @@ main {
 }
 
 /* Styling for the location box */
-.location-box .location {
-  color: floralwhite;
-  font-size: 32px;
-  font-weight: 500;
-  font-style: oblique;
-  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+.location-box {
+  display: inline-block;
+  color: rgba(19, 18, 18, 0.847);
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  padding: 10px 20px;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.763);
+  border-radius: 30px;
+  margin: 15px 15px;
+  box-shadow: 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+.location-box .location{
+  color: rgb(0, 8, 3);
+  font-size: 40px;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 /* Styling for default view message */
 h2 {
   color: floralwhite;
@@ -229,40 +232,35 @@ p {
   padding-bottom: 20px;
 }
 
-/* Styling for the date in the location box */
-.location-box .date {
-  color: floralwhite;
-  font-size: 20px;
-  font-style: italic;
-  font-weight: 300;
-}
 
 /* Styling for the temperature display */
 .weather-box .temp {
   display: inline-block;
   padding: 10px 25px;
   color: floralwhite;
-  font-size: 102px;
+  font-size: 80px;
   font-style: oblique;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 60px;
   margin: 30px 0px;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Styling for the weather condition text */
 .weather-box .weather {
+  display: inline-block;
+  padding: 10px 25px;
   color: floralwhite;
-  font-size: 48px;
+  font-size: 70px;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 600;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 60px;
-  margin: 30px 0px;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  margin: 0px 30px;
+  box-shadow: 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Styling for images */
